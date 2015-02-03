@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Help The Good Fight take over the world!</title>
+		<style>
+			html,
+			body {
+				padding: 0;
+				margin: 0;
+				font-family: Helvetica, Arial, sans;
+				line-height: 160%;
+				color: #4e4e4e;
+			}
+			
+			#wrapper {
+				width: 600px;
+				margin: 0px auto;
+				padding: 40px 40px;
+				background-color: #dcdcdc;
+			}
+			
+			#second_section, #third_section {
+				border-top: 1px solid white;
+				margin-top: 30px;
+				padding-top: 20px;
+			}
+			
+			input {
+				border: 1px solid #CFCFCF;
+				background-color: #FFFFFF;
+				padding: 4px 9px;
+				border-radius: 3px;
+				font-size: 16px;
+				line-height: 20px;
+				outline: none;
+				width: 400px;
+			}
+			
+			#third_section input {
+				width: 580px;
+			}
+			
+			#logo {
+				width: 519px;
+				margin: 0 auto 30px auto;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="wrapper">
+			
+			<div id="first_section">
+				<div id="logo">
+					<img src="http://i.imgur.com/gn4WUW8.png" />
+				</div>
+		
+				<h1>Hi, Good Fight Kickstarter recruiter!</h1>
+				
+				<p>If we pull together now, we're on track for to hit the $100,000 goal! Use the tool below to get a personal recruiting link—and once the Kickstarter is over, we'll thank anyone who recruits five backers on-air and on our website. Plus the top recruiter gets a photo shoot in the Good Fight studio in DC. Go! Go! Go!</p>
+			</div>
+			
+			<div id="second_section">
+				
+				<h3>Fill out this form:</h3>
+			
+				<p>Hi, my name is <input id="name" type="text" placeholder="Your Name" />,</p>
+				<p>my email address is <input id="email" type="text" placeholder="Your Email Address" />,</p>
+				<p>and I want to help The Good Fight beat Goliath.</p>
+			
+			</div>
+			
+			<div id="third_section">
+				
+				<h3>And get your personal link here:</h3>
+			
+				<p><input id="link" type="text" placeholder="Your Personal Link" /></p>
+			</div>
+		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+		
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var make_link = function() {
+				if ($('#name').val() != '' && $('#email').val() != '') {
+					$('#link').val('https://www.kickstarter.com/projects/benwikler/the-good-fight-with-ben-wikler/?ref=name_' + $('#name').val() + '_email_' + $('#email').val());
+				}
+			}
+			$('#name, #email').on('keyup', make_link);
+			$('#name, #email').on('change', make_link);
+		});
+		</script>
+	</body>
+</html>
